@@ -1,0 +1,22 @@
+﻿@model List<Book>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+
+<div class="landing-page">
+    <img src="~/lib/image.jpeg"width="800" alt="Landing Page Image" class="landing-image" />
+    <div class="search-bar-container">
+        <div class="container mt-4">
+            <form asp-controller="Book" asp-action="SearchBooks" method="get" class="form-inline">
+                <div class="form-group">
+                    <input type="text" name="title" class="form-control mr-2" placeholder="Search...">
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+
+    </div>
+</div>

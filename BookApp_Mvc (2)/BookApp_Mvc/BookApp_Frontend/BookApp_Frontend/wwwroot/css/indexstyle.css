@@ -1,0 +1,28 @@
+﻿body 
+
+{
+    position: relative;
+}
+
+.landing-image {
+    width: 100%;
+    height: auto;
+}
+
+.search-bar-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 200px;
+}
+
+button {
+    padding: 10px;
+}
+

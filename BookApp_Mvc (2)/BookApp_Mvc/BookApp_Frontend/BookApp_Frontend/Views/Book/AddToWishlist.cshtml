@@ -1,0 +1,61 @@
+﻿@model List<Book>
+
+<style>
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .card {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 200px; /* Set your desired width */
+        text-align: center;
+    }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .card h3 {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+    .wishlist-button {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+</style>
+
+@if (Model != null)
+{
+    <div class="card-container">
+        @foreach (var book in Model)
+        {
+            <div class="card">
+                <img src="https://covers.openlibrary.org/b/id/@book.cover_i-M.jpg" />
+                <h3>@book.Title</h3>
+                @Html.ActionLink("Remove", "Delete", "Book", new { coverid = book.cover_i }, new { @class = "btn btn-danger"})
+
+
+            </div>
+        }
+    </div>
+    <script>
+        function Delete(title) {
+        // You can perform additional logic here, for example, making an AJAX request
+        alert('Deleted Successfully: ' + title);
+        }
+    </script>
+}
